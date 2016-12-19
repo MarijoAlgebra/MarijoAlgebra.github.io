@@ -1,0 +1,157 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="_reveal/css/reveal.css">
+        <link rel="stylesheet" href="_reveal/css/theme/white.css">
+		<link rel="stylesheet" href="_reveal/lib/css/agate.css">
+
+		
+    </head>
+    <body>
+ <!-- ============================================================================================================================================ -->
+		<div class="reveal">
+			<div class="slides">
+			
+				<!-- INTRO slide --------------------------------------------------------->
+				<section data-background-image="_reveal/img/Algebra-OU.png"  data-background-size="350px" data-background-position="bottom">
+					<img src="slike/laravel.png" width="250px">
+					
+					<br><br>
+					<h2>Laravel</h2>
+					<h4>Vježba 1</h4>
+					<div>Prva Laravel APP</div>					
+					<br><br><br><br>
+				</section>
+				<!------------------------------------------------------------------------>
+				
+				
+				<!-- 1 slide ------------------------------------------------------------->
+				<section data-background-image="_reveal/img/Algebra-OU.png"  data-background-size="150px" data-background-position="top left">
+					<section>
+						<h2>Model Viev Controller arhitektura</h2>
+						<img src="slike/mvc-diagram.png" width="800px">
+						
+						<aside class="notes">
+							Laravel koristi tzv. MVC arhitekturu 
+						</aside>
+					</section>
+						
+					<section data-markdown data-background-image="_reveal/img/Algebra-OU.png"  data-background-size="150px" data-background-position="top left">
+						<script type="text/template">
+							### _Request_
+							Sve započinje zahtjevom korisnika koji upisuje traženi URL
+
+							### _Request_ dolazi do _Controller_-a
+							_Controller_-ov posao je da dohvati potrebne podatke i organizira ih po potrebi.
+
+							### _Model_ 
+							Modeli sadrže podatke koje _Controller_ organizira prema potrebi. Ovisno o tome što je traženo u _Request_-u.
+						</script>
+					</section>
+						
+					<section data-markdown data-background-image="_reveal/img/Algebra-OU.png"  data-background-size="150px" data-background-position="top left">
+						<script type="text/template">
+							### _View_
+							Kada _Controller_ organizira podatke od _Model_-a aktivira se _View_ koji te podatke prikaže na traženi način.
+							
+							1. Korisnik šalje zahtjev
+							2. _Controller_ prima zahtjev
+							3. Korištenjem _Model_-a dohvaća potrebne podatke, organizira ih i proslijeđuje..
+							4. _View_-u koji preuzima podatke i prikazuje ih korisniku
+						</script>
+					</section>
+						
+					<section data-markdown data-background-image="_reveal/img/Algebra-OU.png"  data-background-size="150px" data-background-position="top left">
+						<script type="text/template">
+							## MVC arhitektura
+
+							* __Model__ šalje upite na bazu i dohvaća podatke
+							* __View__ ili __Pogled__ stvara stranice za prikaz
+							* __Controller__ ili __Upravljač__ obrađuje korisničke upite, preuzima podatke od modela i proslijeđuje ih pogledu za prikaz
+						</script>
+					</section>
+				</section>
+				<!------------------------------------------------------------------------>
+				
+				
+				<!-- 2 slide ------------------------------------------------------------->
+				<section data-markdown data-background-image="_reveal/img/Algebra-OU.png"  data-background-size="150px" data-background-position="top left">
+					<script type="text/template">
+						## Laravel direktoriji
+
+						* __app__ direktorij sadrži slijedeće poddirektorije:
+						
+						  * _Console_ - Artisan komande
+						  * _Http_ - kontroleri, middleware, requests i rute
+						  * _Providers_ - sadrži pružatelje usluga (_service providers_)
+						  * _Events_ - klase događaja i upravitelje (_event handler_)
+						  * _Exceptions_ - iznimke i korisnički definirane iznimke
+						  * _Jobs_ - poslovi u redu čekanja (_job queue_)
+						  * _Listeners_ - osluškivači koji obrađuju događaje
+						  * _Policies_ - pravila za autorizacije
+					</script>
+				</section>
+				<!------------------------------------------------------------------------>
+				
+				
+				<!-- 3 slide ------------------------------------------------------------->
+				<section data-markdown data-background-image="_reveal/img/Algebra-OU.png"  data-background-size="150px" data-background-position="top left">
+					<script type="text/template">
+						## Laravel direktoriji
+
+						* ostali direktoriji:
+						
+						  * _bootstrap_ - framework, autoloading i generirane cache datoteke
+						  * _config_ - app konfiguracijske datoteke
+						  * _database_ - datoteke za bazu (migracija i dr.)
+						  * _public_ - korisničke datoteke dostupne web serveru
+						  * _resources_ - pogledi i lokalizacijske datoteke
+						  * _storage_ - kompilirani Blade pogledi, cache i logs
+						  * _tests_ - testovi
+						  * _vendor_ - app zavisnosti (_dependencies_)
+					</script>
+				</section>
+				<!------------------------------------------------------------------------>
+				
+				<!-- 4 slide ------------------------------------------------------------->
+				<section data-state="customevent">
+					<h4>Stvaranje novog Laravel projekta (v5.1)</h4>
+					<pre><code class="php" data-trim contenteditable style="font-size: 18px;">
+composer create-project --prefer-dist laravel/laravel auti 5.1
+					</code></pre>
+				</section>
+				<!------------------------------------------------------------------------>
+				
+				<!-- 5 slide ------------------------------------------------------------->
+				<section data-state="customevent">
+					<h4>Stvaranje modela i migracije (database), direktoruj <i>app</i></h4>
+					<pre><code class="php" data-trim contenteditable style="font-size: 18px;">
+cd auti
+php artisan make:model Auto --migration
+					</code></pre>
+				</section>
+				<!------------------------------------------------------------------------>
+				
+				<!-- 6 slide ------------------------------------------------------------->
+				<section data-state="customevent">
+					<h4>Modeli se nalaze u <i>app</i> direktoriju pa će prethodna naredba stvoriti model <i>app/Auto.php</i></h4>
+					<pre><code class="php" data-trim contenteditable style="font-size: 18px;">
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Auto extends Model
+{
+    //
+}
+					</code></pre>
+				</section>
+				<!------------------------------------------------------------------------>
+				
+			</div>
+		</div>
+ <!-- ============================================================================================================================================ -->
+		<script src="_reveal/lib/js/head.min.js"></script>
+        <script src="_reveal/js/reveal.js"></script>
+        <script src="_reveal/revealInit.js"></script>
+    </body>
+</html>

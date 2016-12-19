@@ -1,0 +1,121 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="_reveal/css/reveal.css">
+        <link rel="stylesheet" href="_reveal/css/theme/white.css">
+		<link rel="stylesheet" href="_reveal/lib/css/agate.css">
+
+		
+    </head>
+    <body>
+ <!-- ============================================================================================================================================ -->
+		<div class="reveal">
+			<div class="slides">
+			
+				<!-- INTRO slide --------------------------------------------------------->
+				<section data-background-image="_reveal/img/Algebra-OU.png"  data-background-size="350px" data-background-position="bottom">
+					<img src="slike/laravel.png" width="250px">
+					
+					<br><br>
+					<h2>Laravel</h2>
+					<h4>Vježba 1</h4>
+					<div>Opis ove vježbice</div>					
+					<br><br><br><br>
+					
+					<aside class="notes">
+						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard). Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
+					</aside>
+				</section>
+				<!------------------------------------------------------------------------>
+
+				
+				<!-- 1 slide ------------------------------------------------------------->
+				<section data-background-image="_reveal/img/Algebra-OU.png"  data-background-size="150px" data-background-position="top left">
+					<h2>Model Viev Controller arhitektura</h2>
+				</section>
+				<!------------------------------------------------------------------------>
+				
+				
+				
+				<section data-state="customevent">
+					<h2>State Events</h2>
+					<p>
+						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
+					</p>
+					<pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
+Reveal.addEventListener( 'customevent', function() {
+	console.log( '"customevent" has fired' );
+} );
+					</code></pre>
+				</section>
+				
+				<!-- 1 slide ------------------------------------------------------------->
+				<section data-background-image="_reveal/img/Algebra-OU.png"  data-background-size="150px" data-background-position="top left">
+					<h2>Pretty Code</h2>
+					<pre><code class="php" data-trim contenteditable>
+
+function dirToArray($dir) { 
+   
+   $result = array(); 
+
+   $cdir = scandir($dir); 
+   foreach ($cdir as $key => $value) 
+   { 
+      if (!in_array($value,array(".",".."))) 
+      { 
+         if (is_dir($dir . DIRECTORY_SEPARATOR . $value)) 
+         { 
+            $result[$value] = dirToArray($dir . DIRECTORY_SEPARATOR . $value); 
+         } 
+         else 
+         { 
+            $result[] = $value; 
+         } 
+      } 
+   } 
+   
+   return $result; 
+}
+
+//var_dump(dirToArray('/srv/storage/arhiva/mails/bubulescu.org/INBOX'));
+
+						</code></pre>
+					<aside class="notes">
+						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
+					</aside>
+				</section>
+				<!------------------------------------------------------------------------>
+				
+				<!-- 1 slide ------------------------------------------------------------->
+				<section data-background-image="_reveal/img/Algebra-OU.png"  data-background-size="150px" data-background-position="top left">
+					<section>Vertical Slide 1</section>
+					<section>Vertical Slide 2</section>
+				</section>
+				<!------------------------------------------------------------------------>
+				
+				<!-- 3 slide ------------------------------------------------------------->
+				<section data-markdown data-background-image="_reveal/img/Algebra-OU.png"  data-background-size="150px" data-background-position="top left">
+					<script type="text/template">
+						## Page title
+
+						A paragraph with some text and a [link](http://hakim.se).
+					</script>
+				</section>
+				<!------------------------------------------------------------------------>
+				
+				<!-- 4 slide ------------------------------------------------------------->
+				<section data-markdown data-background-image="_reveal/img/Algebra-OU.png"  data-background-size="150px" data-background-position="top left">
+					<script type="text/template">
+					<!-- .slide: data-background="#ff0000" -->
+						Markdown content
+					</script>
+				</section>
+				<!------------------------------------------------------------------------>
+
+			</div>
+		</div>
+ <!-- ============================================================================================================================================ -->
+		<script src="_reveal/lib/js/head.min.js"></script>
+        <script src="_reveal/js/reveal.js"></script>
+        <script src="_reveal/revealInit.js"></script>
+    </body>
+</html>
